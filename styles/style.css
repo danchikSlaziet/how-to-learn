@@ -11,23 +11,6 @@
 
 /* ------------------- Вспомогательные классы ------------------------------------------------------------------- */
 
-.section-mb {
-  margin-bottom: 100px;
-}
-
-.kaufman-padding {
-  padding: 90px 0;
-}
-
-.footer-padding {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-
-.flex {
-  display: flex;
-}
-
 .centered-block {
   margin: 0 auto;
 }
@@ -41,6 +24,8 @@
 
 .header {
   position: relative;
+  display: flex;
+  align-items: center;
   height: 100vh;
   min-height: 600px;
   max-height: 756px;
@@ -62,7 +47,8 @@
   margin: 0;
   z-index: 2;
   margin-left: 64px;
-  width: 739px;
+  max-width: 730px;
+  width: 100%;
   line-height: 96px;
   font-size: 102px;
   font-weight: 600;
@@ -74,7 +60,8 @@
   bottom: 30px;
   z-index: 2;
   margin: 0;
-  width: 388px;
+  max-width: 388px;
+  width: 100%;
   line-height: 25px;
   font-size: 18px;
   font-weight: normal;
@@ -98,6 +85,7 @@
   right: 0;
   bottom: 0;
   z-index: 1;
+  object-fit: cover;
   width: 765px;
   height: 608px;
 }
@@ -119,17 +107,22 @@
 
 .description {
   background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .description__article {
-  margin: auto;
+  display: flex;
   justify-content: space-between;
+  margin: 100px 0 100px 0;
   width: 80%;
 }
 
 .two-columns__brief {
   margin: 0;
-  width: 175px;
+  max-width: 175px;
+  width: 100%;
   color: #2f80ed;
   line-height: 1.2;
   font-size: 18px;
@@ -186,24 +179,35 @@
 }
 
 .section-subtitle_theme_white {
-  margin: 0 auto 60px auto;
+  margin: 0 auto;
+  text-align: center;
   color: black;
 }
 
 .table {
-  width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  row-gap: 60px;
+  max-width: 1100px;
+  list-style: none;
+  padding: 0;
+  margin-top: 60px;
+  margin-bottom: 100px;
 }
 
 .table__cell {
-  vertical-align: top;
+  flex-grow: 1;
 }
 
 .table__cell_theme_white {
-  width: 250px;
+  max-width: 250px;
+  width: 100%;
 }
 
 .table__heading {
-  margin: 0 0 20px 0;
+  margin: 0;
   line-height: 1.15;
   font-size: 24px;
   font-weight: 600;
@@ -214,7 +218,7 @@
 }
 
 .table__text {
-  margin: 0;
+  margin: 20px 0 0 0;
   line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
@@ -224,37 +228,27 @@
   color: black;
 }
 
-.table__raw {
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.table__raw_theme_white:not(:last-child) {
-  margin-bottom: 60px;
-}
-
-/* как логически правильно назвать класс для этого дебильного отступа?  */
-.strange-mb  {
-  display: inline-block;
-  margin: 0;
-  margin-bottom: 20px;
-}
 /* ------------------------- FEYNMAN ---------------------------------------------------------------------- */
 
 .feynman {
   position: relative;
-  padding-top: 100px;
-  height: 890px;
+  min-height: 890px;
   box-sizing: border-box;
   background-color: #f2f2f2;
+  background-image: url(../images/feynman.png);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 867px 637px;
 }
 
 .feynman__title {
   position: relative;
   z-index: 1;
   margin: 0 auto 70px auto;
+  padding-top: 100px;
   text-align: center;
-  width: 648px;
+  max-width: 648px;
+  width: 100%;
   line-height: 1.15;
   font-size: 120px;
   font-weight: 600;
@@ -282,14 +276,6 @@
   font-weight: normal;
 }
 
-.feynman__img {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 867px;
-  height: 637px;
-}
-
 /* ------------------------- KAUFMAN ---------------------------------------------------------------------- */
 
 .kaufman {
@@ -297,12 +283,15 @@
   background-color: #1f1f1f;
   box-sizing: border-box;
   overflow: hidden;
+  padding: 90px 0;
 }
 
 .kaufman__triangle {
   position: absolute;
   right: -210px;
   top: 0;
+  background-image: url(../images/kaufman-triangle.svg);
+  background-size: cover;
   width: 877px;
   height: 877px;
 }
@@ -317,19 +306,21 @@
 .section-subtitle_theme_dark {
   position: relative;
   z-index: 1;
-  margin: 0 auto 80px auto;
+  margin: 0 auto 0 auto;
   color: white;
+}
+
+.table_theme_dark {
+  row-gap: 80px;
+  margin: 80px auto 0 auto;
 }
 
 .table__cell_theme_dark {
   position: relative;
   z-index: 1;
   color: white;
-  width: 200px;
-}
-
-.table__raw_theme_dark:not(:last-child) {
-  margin-bottom: 80px;
+  max-width: 200px;
+  width: 100%;
 }
 
 /* ------------------------- FOOTER ---------------------------------------------------------------------- */
@@ -339,19 +330,18 @@
   box-sizing: border-box;
   min-height: 350px;
   color: white;
-
+  display: flex;
+  padding: 60px 0 40px 0;
 }
 
 .footer__columns {
+  display: flex;
   justify-content: space-between;
   width: 90%;
-  flex-grow: 1;
-  min-height: 250px;
-
-  /* высота флекс-контейнера в процентах (height: 100%) не задаётся, что тогда делать?? */
 }
 
 .footer__column_content_copyright {
+  display: flex;
   flex-basis: 711px;
   flex-direction: column;
   justify-content: space-between;
@@ -364,7 +354,7 @@
 
 .footer__author {
   display: block;
-  padding: 18px 0;
+  margin: 18px 0;
   line-height: 25px;
   font-size: 18px;
   font-weight: normal;
@@ -372,7 +362,7 @@
 
 .footer__column-heading {
   display: block;
-  margin-bottom: 20px;
+  margin: 0;
   line-height: 30px;
   font-size: 18px;
   font-weight: 600;
@@ -394,8 +384,10 @@
 }
 
 .footer__column-links {
+  padding: 0;
+  margin: 20px 0 16px 0;
+  list-style: none;
   flex-direction: column;
-  padding-bottom: 16px;
 }
 
 .footer__column_content_social {
@@ -403,6 +395,8 @@
 }
 
 .footer__social-icon {
+  width: 16px;
+  height: 16px;
   margin-right: 10px;
   vertical-align: middle;
 }
