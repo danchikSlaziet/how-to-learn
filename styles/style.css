@@ -190,6 +190,9 @@
   max-width: 1100px;
   list-style: none;
   padding: 0;
+}
+
+.table_theme_white {
   margin-top: 60px;
   margin-bottom: 100px;
 }
