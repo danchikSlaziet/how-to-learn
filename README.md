@@ -4,4 +4,4 @@
 
 В будущем планируется реализовать адаптивную вёрстку.
 
-** ссылка GH Pages:  https://danchikslaziet.github.io/how-to-learn/ **
+**ссылка GH Pages:  https://danchikslaziet.github.io/how-to-learn/**
